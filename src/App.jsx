@@ -1,10 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import StarFields from './Components/StarFields'
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import GalaxyNode from './Components/GalaxyNode';
 import SolarSystem from './Components/SolarSystem';
+
+const CameraUpdater = () => {
+  const { camera, gl } = useThree();
+
+  useEffect(() => {
+    const handleResize = () => {
+      camera.aspect = gl.domElement.clientWidth / gl.domElement.clientHeight;
+      camera.updateProjectionMatrix();
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [camera, gl]);
+
+  return null;
+};
 
 const App = () => {
   const [SelectedGalaxy, setSelectedGalaxy] = useState(null)
@@ -57,6 +75,7 @@ const App = () => {
   return (
     <div className="w-screen h-screen">
       <Canvas className="w-full h-full bg-black" camera={{ position: [0, 20, 35], fov: 50 }}>
+        <CameraUpdater />
         <StarFields />
         {galaxiesVisible && (<>
           <GalaxyNode
