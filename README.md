@@ -1,16 +1,77 @@
-# React + Vite
+# Galaxy Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive 3D galaxy visualization built with React and Three.js, exploring spiritual themes through cosmic representations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Galaxies**: Click on galaxy nodes to explore different spiritual themes
+- **Solar Systems**: Detailed solar systems representing personal growth, relationships, and life transitions
+- **Responsive Camera**: Camera automatically adjusts aspect ratio on window resize for optimal viewing
+- **Bloom Effects**: Post-processing bloom effects for enhanced visual appeal
+- **Orbit Controls**: Navigate the 3D space with mouse controls and zoom
 
-## React Compiler
+## Themes Explored
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Personal Growth & Inner Conflicts**
+   - Self-Awareness & Mindfulness
+   - Ego, Identity, and Detachment
+   - Guilt, Shame & Forgiveness
+   - Fear, Doubt & Faith
+   - Purpose and Meaning
+   - Healing from Trauma
 
-## Expanding the ESLint configuration
+2. **Relationships & Connection**
+   - Love & Compassion
+   - Boundaries & Energy Exchange
+   - Family & Generational Patterns
+   - Friendship, Community & Loneliness
+   - Romantic Relationships & Soul Connections
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Life Events & Transitions**
+   - Birth, Death & Grief
+   - Loss, Failure & Renewal
+   - Career, Success & Spiritual Purpose
+   - Health Crises & Recovery
+   - Midlife Awakening / Dark Night of the Soul
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+- Use mouse to orbit around the scene
+- Scroll to zoom in/out
+- Click on galaxy nodes to transition to their solar systems
+- Resize the window to see the camera adapt automatically
+
+## Technologies Used
+
+- **React**: UI framework
+- **Three.js**: 3D graphics
+- **React Three Fiber**: React renderer for Three.js
+- **React Three Drei**: Useful helpers for React Three Fiber
+- **React Three Postprocessing**: Post-processing effects
+- **Vite**: Build tool and development server
+
+## Development
+
+This project uses Vite for fast development and building. ESLint is configured for code quality.
+
+To build for production:
+```bash
+npm run build
+```
+
+To preview the production build:
+```bash
+npm run preview
+```
